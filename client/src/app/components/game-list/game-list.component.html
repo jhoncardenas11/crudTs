@@ -1,17 +1,19 @@
-<div class="col-md-4" *ngFor="let game of games">
-    <div class="card text-center">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            {{game.title}}
-            <button class="btn btn-danger">
-                <i class="fas fa-trash"></i>
-            </button>
-        </div>
-        <img class="ard-img-top" [src]="game.image" alt="">
-        <div class="card-body">
-            <p>{{game.description}}</p>
-            <a href="" class="btn btn-info btn-block">
-                EDITAR JUEGO
-            </a>
+<div class="row">
+    <div class="col-4">
+        <div class="card text-center" *ngFor="let game of games">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                {{game.title}}
+                <button class="btn btn-danger" (click)="deleteGame(game.id)">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+            <img class="card-img-top img-fluid" [src]="game.image" alt="">
+            <div class="card-body">
+                <p>{{game.description}}</p>
+                <a routerLink="/games/update/{{game.id}}" class="btn btn-info btn-block">
+                    EDITAR JUEGO
+                </a>
+            </div>
         </div>
     </div>
 </div>

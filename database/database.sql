@@ -9,5 +9,3 @@ CREATE TABLE games(
     image VARCHAR(200),
     create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-DESCRIBE games;

@@ -1,1 +1,23 @@
-<p>game-form works!</p>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-body">
+            <form name="gameForms" [formGroup]="gamesForm" (ngSubmit)="sendGame()">
+                <div class="form-group">
+                    <div class="form-group">
+                    <label for="title">Example textarea</label>
+                      <input type="text" class="form-control" name="title" id="title" formControlName="title" placeholder="titulo" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Example textarea</label>
+                        <textarea class="form-control" id="description" name="description" formControlName="description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Example textarea</label>
+                        <input type="url" class="form-control" name="image" id="image" formControlName="image" placeholder="url de imagen">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block" [disabled]="gamesForm.invalid">guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
