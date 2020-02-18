@@ -8,11 +8,15 @@ import { GamesService } from '../../services/games.service';
 })
 export class GameListComponent implements OnInit {
 
+  games: any = [];
+
   constructor(private gamesService: GamesService) { }
 
   ngOnInit() {
     this.gamesService.getGames().subscribe(
-      res => console.log(res),
+      res => {
+        this.games = res;
+      },
       err => console.log(err)
     );
   }
